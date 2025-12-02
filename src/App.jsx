@@ -5,7 +5,8 @@ import './App.css';
 
 function App() {
   const [form, setForm] = useState({ name: "", email: "", rsvp: "", message: "" });
-  const [sent, setSent] = useState(false);
+  const [sent, 
+  setSent] = useState(false);
 
   useEffect(() => {
     document.title = 'Wedding Invitation "True Love"';

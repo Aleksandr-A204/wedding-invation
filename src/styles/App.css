@@ -1,0 +1,218 @@
+:root {
+  --beige: #f5f0e6;
+  --rose: #e6b8af;
+  --dark-rose: #d49689;
+  --text-dark: #444;
+}
+
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background-color: var(--beige);
+  background-image: 
+    radial-gradient(var(--rose) 15%, transparent 16%),
+    radial-gradient(var(--rose) 15%, transparent 16%);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  line-height: 1.6;
+}
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 60px 20px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1;
+}
+
+.hero-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 3;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  width: 80%;
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero-subtitle {
+  font-size: 1.8rem;
+  margin: 0 0 20px 0;
+  font-style: italic;
+}
+
+.date {
+  font-size: 1.4rem;
+  margin: 0 0 30px 0;
+  letter-spacing: 1px;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.timer-unit {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 8px 12px;
+  border-radius: 8px;
+  min-width: 60px;
+}
+
+.timer-label {
+  font-size: 0.8rem;
+  display: block;
+  opacity: 0.8;
+}
+
+.invitation-section {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: -60px auto 40px;
+  max-width: 900px;
+  padding: 40px;
+  position: relative;
+  z-index: 4;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--dark-rose);
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '♥';
+  display: block;
+  margin: 15px auto 0;
+  font-size: 1.5rem;
+  color: var(--rose);
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.detail-item {
+  text-align: left;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.detail-value {
+  color: #666;
+  line-height: 1.5;
+}
+
+.rsvp-form {
+  margin-top: 50px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0d6cc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--rose);
+}
+
+button {
+  background-color: var(--dark-rose);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #c48679;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 60px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.5rem; }
+  .hero-subtitle { font-size: 1.4rem; }
+  .date { font-size: 1.2rem; }
+  .timer { flex-wrap: wrap; }
+  .details-grid { grid-template-columns: 1fr; }
+  .invitation-section { padding: 30px; }
+}
